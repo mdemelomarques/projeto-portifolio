@@ -9,12 +9,22 @@
 }
 
 :root {
-  --fundo-principal: #e9c98d;
+  --fundo-principal: whitesmoke;
   --texto: #222222;
   --texto-inverso:#ffffff;
-  --destaque:#a16b34;
-  --destaque-inverso:#FCF3E4;
-  --fundo-card:#D7A96F;
+  --destaque:#F2056B;
+  --destaque-inverso:#F5DC00;
+  --fundo-card:#05CCF2;
+}
+
+body.escuro{
+  --fundo-principal:#222222;
+  --texto: #e0e0e0;
+  --texto-inverso:#333333;
+  --destaque:limegreen;
+  --destaque-inverso:yellowgreen;
+  --fundo-card:#444444;
+
 }
 
 body{
@@ -22,6 +32,7 @@ body{
   line-height: 1.5em;
   color: var(--texto);
   background-color: var(--fundo-principal);
+  transition: background-color 0.5s , color 0.5s;
 }
 
 header {
@@ -31,6 +42,9 @@ header {
   display: flex;
   justify-content: end;
   align-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   
 
 }
@@ -99,8 +113,8 @@ div#social {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.7em;
-  gap: 1em;
+  font-size: 1.5em;
+  
   margin-top: 15px;
   
 }
@@ -289,6 +303,24 @@ footer a:hover {
 }
 
 @media screen and (min-width:768px) {
+
+  main {
+    grid-template-columns: auto 300px 1fr auto;
+
+  }
+
+  section#ficha {
+    grid-column: 2 / 3;
+    height: fit-content;
+    position: sticky;
+    top: 65px;
+
+  }
+
+  section#detalhes {
+    grid-column: 3 / 4;
+  }
+
   .skill-container {
     grid-template-columns: 1fr 1fr;
   }
